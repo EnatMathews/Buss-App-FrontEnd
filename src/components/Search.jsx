@@ -3,7 +3,7 @@ import Nav from './Nav';
 import axios from 'axios';
 
 const Search = () => {
-  const [data, setData] = useState({ firstname: '' });
+  const [data, setData] = useState({ busno: '' });
   const [result, setResult] = useState([]);
 
   const inputHandler = (event) => {
@@ -50,8 +50,8 @@ const Search = () => {
           <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
             <div className="row g-3">
               <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <label htmlFor="" className="form-label">First Name</label>
-                <input type="text" className="form-control" name='firstname' value={data.firstname} onChange={inputHandler} />
+                <label htmlFor="" className="form-label">Bus No</label>
+                <input type="text" className="form-control" name='busno' value={data.busno} onChange={inputHandler} />
               </div>
               <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <button className="btn btn-warning" onClick={readValue}>Search</button>
@@ -65,25 +65,21 @@ const Search = () => {
             <table className="table">
               <thead>
                 <tr>
-                <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">College</th>
-      <th scope="col">DOB</th>
-      <th scope="col">Course</th>
-      <th scope="col">Mobile NO</th>
-      <th scope="col">Email ID</th>
-      <th scope="col">Address</th>
+                <th scope="col">Bus Name</th>
+      <th scope="col">Route</th>
+      <th scope="col">Bus No</th>
+      <th scope="col">Driver Name</th>
+      
                 </tr>
               </thead>
               <tbody>
                 {result.map((value, index) => (
                   <tr>
-                    <td>{value.coursetitle}</td>
-                    <td>{value.coursedesc}</td>
-                    <td>{value.cdate}</td>
-                    <td>{value.dur}</td>
-                    <td>{value.venu}</td>
-                    <td>{value.tname}</td>
+                    <td>{value.busname}</td>
+                    <td>{value.route}</td>
+                    <td>{value.busno}</td>
+                    <td>{value.drivername}</td>
+                    
                     <td>
                       <button className="btn btn-danger" onClick={() => Delete(value._id)}>Delete</button>
                     </td>

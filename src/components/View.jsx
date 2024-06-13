@@ -33,14 +33,11 @@ const View = () => {
   <thead>
     <tr>
       
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">College</th>
-      <th scope="col">DOB</th>
-      <th scope="col">Course</th>
-      <th scope="col">Mobile NO</th>
-      <th scope="col">Email ID</th>
-      <th scope="col">Address</th>
+      <th scope="col">Bus Name</th>
+      <th scope="col">Route</th>
+      <th scope="col">Bus No</th>
+      <th scope="col">Driver Name</th>
+      
       
       
     </tr>
@@ -51,14 +48,11 @@ const View = () => {
             (value,index)=>{
                 return  <tr>
                
-                <td>{value.firstname}</td>
-                <td>{value.lastname}</td>
-                <td>{value.college}</td>
-                <td>{value.dob}</td>
-                <td>{value.course}</td>
-                <td>{value.mobile}</td>
-                <td>{value.email}</td>
-                <td>{value.address}</td>
+                <td>{value.busname}</td>
+                <td>{value.route}</td>
+                <td>{value.busno}</td>
+                <td>{value.drivername}</td>
+                
                
                 
               </tr>
