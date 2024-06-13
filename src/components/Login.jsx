@@ -10,8 +10,8 @@ const Login = () => {
 
 const [data,changedata]=useState(
     {
-        "user":"",
-        "pass":"",
+        "username":"",
+        "password":"",
     }
 )
 
@@ -20,8 +20,20 @@ const inputHandler=(event)=>{
 }
 
 const readvalue=()=>{
-    console.log(data)
-}
+    axios.post("",data).then((response)=>{
+     if (response.data.status === "success") {
+         sessionStorage.setItem("token", response.data.token);
+         sessionStorage.setItem("userid", response.data.userid);
+         navigate("/dashboard")
+     } else {
+         alert("Login failed");
+     }
+ }).catch((error) => {
+     console.error("There was an error logging in!", error);
+     alert("An error occurred. Please try again.");
+ });
+ }
+ let navigate = useNavigate()
 
     
 
@@ -45,12 +57,12 @@ const readvalue=()=>{
     <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
 <b>
 <label htmlFor="" className="form-label">User Name</label></b>
-<input type="text" className="form-control" name="uname" value={data.uname} onChange={inputHandler}/>
+<input type="text" className="form-control" name="username" value={data.username} onChange={inputHandler}/>
 
    
 <b>
     <label htmlFor="" className="form-label">PassWord</label></b>
-   <input type="password" name="pass" id="" className="form-control"  value={data.pass} onChange={inputHandler} />
+   <input type="password" name="password" id="" className="form-control"  value={data.password} onChange={inputHandler} />
    <br></br>
   
 
