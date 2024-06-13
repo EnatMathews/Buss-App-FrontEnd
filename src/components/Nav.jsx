@@ -6,13 +6,7 @@ const Nav = () => {
         <div>
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="https://fisat.ac.in/wp-content/themes/fisat2022/assets/logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top" />
-
-                    
-                        <img src="https://fisat.ac.in/wp-content/themes/fisat2022/assets/testcopy.png" alt="Logo" width="700" height="100" class="d-inline-block align-text-top" />
-
-                    </a>
+                  <b>  KSRTC BUSS APP</b>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
